@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Comment": {
+      "title": "Comment",
+      "description": "A comment left on the memorial page to pay respects.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorUid": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["authorName", "authorUid", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Collection of comments left on the memorial page."
+    }
+  }
+}
